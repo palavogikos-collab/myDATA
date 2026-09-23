@@ -1,0 +1,129 @@
+{
+ "schema": "mydata.invoice/1",
+ "id": "MYDATA-000001",
+ "status": "synced",
+ "type": "2.1",
+ "series": "MYDATA",
+ "number": 1,
+ "issue_date": "2026-09-23",
+ "currency": "EUR",
+ "issuer": {
+  "vat": "000000000",
+  "name": "ΕΤΑΙΡΕΙΑ ΑΕ",
+  "branch": 0,
+  "street": "ΟΔΟΣ 1",
+  "city": "ΑΘΗΝΑ",
+  "postal_code": "10000",
+  "doy": "ΦΑΕ ΑΘΗΝΩΝ"
+ },
+ "customer": {
+  "vat": "999999999",
+  "name": "ΠΕΛΑΤΗΣ ΠΑΡΑΔΕΙΓΜΑ ΑΕ",
+  "street": "ΟΔΟΣ 2",
+  "city": "ΑΘΗΝΑ",
+  "postal_code": "10000",
+  "country": "GR",
+  "doy": "ΦΑΕ ΑΘΗΝΩΝ",
+  "email": "info@customer.example",
+  "refs": {
+   "sap_cardcode": "C.000001",
+   "timologio_code": 1
+  }
+ },
+ "payment": {
+  "method": "credit",
+  "label": "Επί πιστώσει",
+  "due_date": "2026-10-23"
+ },
+ "lines": [
+  {
+   "no": 1,
+   "item_key": "service",
+   "description": "Παροχή υπηρεσιών",
+   "quantity": 1,
+   "unit_price": 2.0,
+   "net": 2.0,
+   "vat_rate": 24,
+   "vat": 0.48,
+   "gross": 2.48,
+   "classification": {
+    "category": "category1_3",
+    "code": "E3_561_001"
+   },
+   "refs": {
+    "sap_itemcode": "I.000001",
+    "sap_account": "73.00.00.0000",
+    "sap_project": null,
+    "timologio_item": 1
+   }
+  }
+ ],
+ "totals": {
+  "net": 2.0,
+  "vat": 0.48,
+  "withheld": 0,
+  "gross": 2.48
+ },
+ "notes": "ΠΑΡΟΧΗ ΥΠΗΡΕΣΙΩΝ ΣΕΠΤΕΜΒΡΙΟΣ",
+ "mydata": {
+  "mark": "400000000000001",
+  "uid": null,
+  "transmitted_at": "2026-09-23T11:34:53+00:00",
+  "channel": "timologio"
+ },
+ "pdf": "data/invoices/2026/MYDATA-000001_999999999_400000000000001.pdf",
+ "sync": {
+  "erp": {
+   "adapter": "sap_b1",
+   "docentry": 1001,
+   "docnum": 1001,
+   "series": 83,
+   "synced_at": "2026-09-23T11:35:24+00:00",
+   "mark_patch": "ok"
+  },
+  "email": {
+   "sent_at": "2026-09-23T11:37:23+00:00",
+   "to": [
+    "info@customer.example",
+    "accounting@issuer.example"
+   ]
+  }
+ },
+ "audit": [
+  {
+   "at": "2026-09-23T11:32:41+00:00",
+   "step": "draft",
+   "by": "rcw-013bwrjkocpivtkgsjabfvcy"
+  },
+  {
+   "at": "2026-09-23T11:34:12+00:00",
+   "step": "previewed"
+  },
+  {
+   "at": "2026-09-23T11:34:53+00:00",
+   "step": "issued",
+   "mark": "400000000000001",
+   "aa": 1
+  },
+  {
+   "at": "2026-09-23T11:35:15+00:00",
+   "step": "pdf",
+   "file": "data/invoices/2026/MYDATA-000001_999999999_400000000000001.pdf"
+  },
+  {
+   "at": "2026-09-23T11:35:24+00:00",
+   "step": "sap_invoice",
+   "docentry": 1001,
+   "docnum": 1001,
+   "total": 2.48
+  },
+  {
+   "at": "2026-09-23T11:37:23+00:00",
+   "step": "emailed",
+   "to": [
+    "info@customer.example",
+    "accounting@issuer.example"
+   ]
+  }
+ ]
+}
