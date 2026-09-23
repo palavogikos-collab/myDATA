@@ -2,6 +2,17 @@
 
 Adapters first. Everything else second.
 
+## The mechanics
+
+1. Fork the repository on GitHub.
+2. Create a branch in your fork (`adapter-softone`, `fix-timologio-client`).
+3. Commit your change with a message that says what and why.
+4. Open a pull request against `main`. Describe what you tested and how.
+5. A maintainer reviews, asks questions in the PR, and merges.
+
+Small fixes (typos, a wrong endpoint name) can go straight to a PR. Anything that touches
+the approval stops or the invoice schema starts as an issue first.
+
 1. Open an issue named `adapter: <ERP>` and answer the four questions in
    `adapters/<erp>.py`'s docstring (customer lookup, external document type,
    transmitted flag + MARK field, document id).

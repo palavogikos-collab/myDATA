@@ -93,6 +93,32 @@ reconciliation.
 - Accountants who want a per-invoice audit trail (draft, preview, MARK, ERP document,
   email) in plain files.
 
+## Who can use it, and how
+
+**A business owner or accountant, as is.** You need: a computer with Python 3, Chrome with
+the Claude extension, the Claude desktop app, a TAXISnet login for timologio, myDATA REST
+credentials (free, from mydata.aade.gr) and, for the ERP leg, SAP Business One with Service
+Layer access. Follow Setup, add the folder to the Claude desktop app, log in to timologio,
+then say «τιμολόγιο 900 ευρώ στον ΑΦΜ 123456789 για παροχή υπηρεσιών». Claude reads
+`SKILL.md`, stops at the preview, waits for «ναι», issues, syncs, emails.
+
+Without an ERP you still get issuance, MARK, PDF, email and the JSON record. The `erp`
+step just reports that no adapter is configured.
+
+**Manual mode, without Claude.** `issue.py` is a plain CLI and `timologio_client.js` runs
+in any browser console. Open the timologio invoice page, paste the file's contents into the
+DevTools console, then call `TL.build(spec)` with the SPEC printed by `issue.py new`,
+`TL.preview()`, `TL.showPdf()`, and `TL.issue()` when you are sure. Continue with
+`issue.py issued`, `pdf`, `erp`, `email` by hand.
+
+**A developer, adding an ERP.** Copy one of the stubs in `adapters/`, answer the four
+questions in its docstring, implement `post_invoice(inv, dry=False)`, test with a 1 €
+invoice, open a pull request. See `docs/adapters.md`.
+
+**Known limits.** timologio updates break the browser client until someone patches it. The
+SAP adapter depends on Service Layer permissions the SAP partner controls (item master
+read, E-Books protocol write). There are no automated tests; a real 1 € invoice is the test.
+
 ## Repository layout
 
 ```
