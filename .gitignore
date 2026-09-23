@@ -1,0 +1,12 @@
+.env
+data/
+*.pdf
+__pycache__/
+*.pyc
+.DS_Store
+vat_index.json
+customers.json
+supplier_index.json
+aliases.json
+bank/
+reports/

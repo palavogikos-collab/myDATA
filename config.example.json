@@ -1,0 +1,40 @@
+{
+  "issuer": {
+    "vat": "000000000",
+    "name": "ΕΤΑΙΡΕΙΑ ΑΕ",
+    "branch": 0,
+    "street": "ΟΔΟΣ 1",
+    "city": "ΑΘΗΝΑ",
+    "postal_code": "10000",
+    "doy": "ΦΑΕ ΑΘΗΝΩΝ"
+  },
+  "default_due_days": 30,
+  "downloads_dirs": ["~/Downloads"],
+  "timologio": { "series": "MYDATA" },
+  "items": {
+    "service": {
+      "name": "ΠΑΡΟΧΗ ΥΠΗΡΕΣΙΩΝ",
+      "timologio_item": 1,
+      "mydata_type": "2.1",
+      "vat_rate": 24,
+      "classification": { "category": "category1_3", "code": "E3_561_001" },
+      "code": "I.000001",
+      "account": "73.00.00.0000"
+    }
+  },
+  "erp": {
+    "adapter": "sap_b1",
+    "external_series": 83,
+    "vat_group": "Φ7300-24",
+    "service_account": "73.00.00.0000",
+    "items_readable": false,
+    "bp_defaults": {
+      "GroupCode": 100,
+      "PayTermsGrpCode": 1,
+      "DebitorAccount": "30.00.00.0000",
+      "VatGroup": "Φ7300-24",
+      "LanguageCode": 18
+    }
+  },
+  "email": { "always_cc": ["accounting@example.gr"] }
+}
