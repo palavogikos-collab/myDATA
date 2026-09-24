@@ -19,7 +19,10 @@
       "vat_rate": 24,
       "classification": { "category": "category1_3", "code": "E3_561_001" },
       "code": "I.000001",
-      "account": "73.00.00.0000"
+      "account": "73.00.00.0000",
+      "softone_code": "SERVICE-CODE-IN-SOFT1",
+      "softone_kind": "service",
+      "softone_vat": "SOFT1-VAT-ID-FOR-24"
     }
   },
   "erp": {

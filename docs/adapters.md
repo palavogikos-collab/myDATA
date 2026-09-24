@@ -49,7 +49,7 @@ readable), the PATCH of `U_Mark` after insert (the add-on clears UDFs on insert)
 | ERP | Customer lookup | External document | Transmitted flag / MARK | Status |
 |---|---|---|---|---|
 | SAP Business One + Hellenization | `BusinessPartners` by CardCode (lists hidden by Data Ownership; key access works) | Series 83 ΤΠΥ-Χ, `DocType dDocument_Service` | `U_AADE=N`, `U_Mark`, `U_MyDataType`; `ElectronicProtocols.EBooksMARK` rejected via SL for a normal user | working |
-| SoftOne (Soft1) | S1 Web Services `getData`/`setData` on `CUSTOMER` by `AFM` | ? | ? | wanted |
+| SoftOne (Soft1) | `/s1services/list/customer` with `AFM=<vat>` (no quotes), `/s1services/set/customer` | `/s1services/set/saldoc` (SRVLINES for services, ITELINES for goods) into a series set up as "issued by third party" (`erp.external_series`) | `SOMYDATAMARK` on SALDOC (`erp.mark_field`); never call `/s1services/einvoice` | drafted, needs a real test |
 | Epsilon Pylon | REST | ? | ? | wanted |
 | Megasoft Prisma Win | ? | ? | ? | wanted |
 | Entersoft | EBS Web API | ? | ? | wanted |

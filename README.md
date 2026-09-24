@@ -131,7 +131,7 @@ scripts/
 adapters/
   sap_b1.py                 SAP Business One adapter (working)
   sap_b1_api.py             SAP B1 Service Layer client used by the adapter
-  softone.py                stub, wanted
+  softone.py                Soft1 Web Services adapter (drafted, needs a real test)
   epsilon_pylon.py          stub, wanted
   megasoft.py               stub, wanted
 docs/
